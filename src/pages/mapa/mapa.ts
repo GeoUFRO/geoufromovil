@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GoogleMaps,GoogleMap } from '@ionic-native/google-maps';
 
-/**
- * Generated class for the Mapa page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-mapa',
@@ -14,11 +9,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Mapa {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  map:any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private googleMaps: GoogleMaps) {
   }
 
+
   ionViewDidLoad() {
+    this.loadMap();
     console.log('ionViewDidLoad Mapa');
   }
+
+  loadMap(){
+    this.map = new GoogleMap("map",{
+      'controls':{
+        'compass':true,
+        'myLocationButton':true,
+        'indoorPicker':true,
+        'zoom':true        
+      },
+      'gestures':{
+        'scroll':true,
+        'tilt':true,
+        'rotate':true,
+        'zoom':true
+      }
+    });
+  }
+
+
 
 }
