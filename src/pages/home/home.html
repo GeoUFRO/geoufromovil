@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+  <ion-img src="../../assets/img/LogoGeoUFRO.jpg"></ion-img>
+  
+  <ion-label text-center>
+    <h3>Ingresar</h3>
+  </ion-label>
+
+  <button ion-button icon-left full round (click)="goToNextPage()" color="turquese"> 
+    <ion-icon name="person"></ion-icon>
+    Anonimo
+  </button>
+  
+  <button ion-button icon-left full round (click)="goToNextPage()" color="map"> 
+    <ion-icon name="logo-facebook"></ion-icon>
+    Facebook
+  </button>
+  
+  <button ion-button icon-left full round (click)="goToNextPage()" color ="danger">
+    <ion-icon name="logo-google" ></ion-icon>
+    Google 
+  </button>    
 </ion-content>
